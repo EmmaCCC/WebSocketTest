@@ -63,8 +63,7 @@ namespace WebSocketTest
                 }
             }
 
-            WebSocket dummy;
-            _sockets.TryRemove(socketId, out dummy);
+            _sockets.TryRemove(socketId, out var dummy);
 
             await currentSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", ct);
             currentSocket.Dispose();
